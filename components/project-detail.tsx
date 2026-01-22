@@ -64,7 +64,7 @@ export function ProjectDetail({ project, onClose }: ProjectDetailProps) {
               <ul className="space-y-2">
                 {project.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3 text-foreground">
-                    <span className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-accent rounded-full mt-2 shrink-0"></span>
                     <span>{feature}</span>
                   </li>
                 ))}

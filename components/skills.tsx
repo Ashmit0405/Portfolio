@@ -19,10 +19,10 @@ const skillCategories = [
     category: "AI/ML",
     skills: ["FastAPI", "Sentence-BERT", "BART", "Vector Search", "RAG Systems"]
   },
-  {
-    category: "Specializations",
-    skills: ["Competitive Programming", "System Design", "DevOps", "Cloud Services"]
-  }
+  // {
+  //   category: "Specializations",
+  //   skills: ["Competitive Programming", "System Design", "DevOps", "Cloud Services"]
+  // }
 ]
 
 export function Skills() {
@@ -64,16 +64,16 @@ export function Skills() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-border">
             <div className="text-center space-y-2">
               <div className="text-4xl font-bold text-accent">10+</div>
-              <p className="text-muted-foreground">Technologies Mastered</p>
+              <p className="text-muted-foreground">Technologies</p>
             </div>
             <div className="text-center space-y-2">
               <div className="text-4xl font-bold text-accent">20+</div>
               <p className="text-muted-foreground">Skills & Tools</p>
             </div>
-            <div className="text-center space-y-2">
+            {/* <div className="text-center space-y-2">
               <div className="text-4xl font-bold text-accent">3</div>
               <p className="text-muted-foreground">Major Specializations</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

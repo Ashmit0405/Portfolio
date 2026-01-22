@@ -5,7 +5,7 @@ const experiences = [
     icon: Users,
     title: "Core Team Member & Cloud Lead",
     organization: "CodeBase Club – IIIT Kota",
-    description: "Led cloud infrastructure initiatives and mentored 50+ students on DevOps practices, Docker, and cloud deployment strategies. Organized technical workshops and code reviews.",
+    description: "Led the cloud infrastructure of the club and handled the hosting and devops related functionalities of the club.",
   },
   {
     icon: Trophy,
@@ -67,18 +67,18 @@ export function Experience() {
               <div className="text-4xl font-bold text-accent">2</div>
               <p className="text-muted-foreground">Hackathon Wins</p>
             </div>
-            <div className="text-center space-y-2">
+            {/* <div className="text-center space-y-2">
               <div className="text-4xl font-bold text-accent">50+</div>
               <p className="text-muted-foreground">Students Mentored</p>
-            </div>
+            </div> */}
             <div className="text-center space-y-2">
               <div className="text-4xl font-bold text-accent">200+</div>
               <p className="text-muted-foreground">Hackathon Participants</p>
             </div>
-            <div className="text-center space-y-2">
+            {/* <div className="text-center space-y-2">
               <div className="text-4xl font-bold text-accent">10+</div>
               <p className="text-muted-foreground">Tech Events Organized</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

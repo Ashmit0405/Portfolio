@@ -28,7 +28,7 @@ export function About() {
                 <h3 className="text-lg font-semibold text-foreground mb-4">Education</h3>
                 <div className="space-y-3">
                   <div>
-                    <p className="font-semibold text-foreground">B.Tech CSE (2023–2027)</p>
+                    <p className="font-semibold text-foreground">B.Tech CSE (2023-2027)</p>
                     <p className="text-muted-foreground">IIIT Kota</p>
                     <p className="text-sm text-accent mt-1">CGPA: 9.17</p>
                   </div>

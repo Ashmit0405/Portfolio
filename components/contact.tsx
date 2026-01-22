@@ -108,7 +108,7 @@ export function Contact() {
               <h3 className="text-2xl font-bold text-foreground">Get in touch</h3>
               <div className="space-y-4">
                 <a
-                  href="mailto:ashmit@example.com"
+                  href="mailto:mail2ashmit05@gmail.com"
                   className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-accent/50 hover:shadow-lg transition-all group"
                 >
                   <div className="p-3 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
@@ -116,12 +116,12 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Email</p>
-                    <p className="text-muted-foreground text-sm">ashmit.singh@example.com</p>
+                    <p className="text-muted-foreground text-sm">mail2ashmit05@gmail.com</p>
                   </div>
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/ashmitsingh"
+                  href="https://www.linkedin.com/in/ashmit-singh-40180329b/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-accent/50 hover:shadow-lg transition-all group"
@@ -131,12 +131,12 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">LinkedIn</p>
-                    <p className="text-muted-foreground text-sm">linkedin.com/in/ashmitsingh</p>
+                    <p className="text-muted-foreground text-sm">linkedin.com/in/ashmit-singh-40180329b/</p>
                   </div>
                 </a>
 
                 <a
-                  href="https://github.com/ashmitsingh"
+                  href="https://github.com/Ashmit0405"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-accent/50 hover:shadow-lg transition-all group"
@@ -146,7 +146,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">GitHub</p>
-                    <p className="text-muted-foreground text-sm">github.com/ashmitsingh</p>
+                    <p className="text-muted-foreground text-sm">github.com/Ashmit0405</p>
                   </div>
                 </a>
               </div>

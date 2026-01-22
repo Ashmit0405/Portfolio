@@ -48,7 +48,7 @@ export function Header() {
         {/* Actions */}
         <div className="flex items-center gap-4">
           <a
-            href="#"
+            href="/Resume_1.pdf"
             className="hidden sm:flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium"
           >
             <Download className="w-4 h-4" />
@@ -101,7 +101,7 @@ export function Header() {
               Contact
             </button>
             <a
-              href="#"
+              href="/Resume_1.pdf"
               className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium"
             >
               <Download className="w-4 h-4" />

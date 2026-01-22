@@ -49,7 +49,7 @@ export function Footer() {
             <h3 className="font-semibold text-foreground">Connect</h3>
             <div className="flex gap-3">
               <a
-                href="https://github.com/ashmitsingh"
+                href="https://github.com/Ashmit0405"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-muted hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors"
@@ -58,7 +58,7 @@ export function Footer() {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com/in/ashmitsingh"
+                href="https://www.linkedin.com/in/ashmit-singh-40180329b/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-muted hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors"
@@ -67,7 +67,7 @@ export function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="mailto:ashmit.singh@example.com"
+                href="mailto:mail2ashmit05@gmail.com"
                 className="p-2 bg-muted hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors"
                 aria-label="Email"
               >

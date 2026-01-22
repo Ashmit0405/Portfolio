@@ -18,13 +18,13 @@ const projects = [
       "User authentication and authorization",
       "Problem management and difficulty levels",
       "Submission history and performance analytics",
-      "Admin dashboard for problem and contest creation"
+      "Admin dashboard for problem and user management"
     ],
     techStack: ["Node.js", "Express", "MongoDB", "Docker", "PM2", "NGINX", "GCP", "JWT"],
     outcomes: "Successfully deployed with 500+ users. Achieved sub-2s code execution time. Handled 1000+ daily submissions with 99.9% uptime.",
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop",
     links: {
-      github: "#",
+      github: "https://github.com/Ashmit0405/Coding_Platform",
       live: "#"
     }
   },
@@ -47,7 +47,7 @@ const projects = [
     outcomes: "Achieved 85% ROUGE score on benchmark datasets. Successfully processed PDFs up to 100 pages. Currently used by 200+ users.",
     image: "https://images.unsplash.com/photo-1526374965328-7f5ae4e8a83f?w=800&h=400&fit=crop",
     links: {
-      github: "#",
+      github: "https://github.com/Ashmit0405/Rag-PDF-Summarizer",
       live: "#"
     }
   },
@@ -62,7 +62,6 @@ const projects = [
       "User registration and authentication",
       "Create, read, update, and delete blog posts",
       "User profiles with bio and avatar",
-      "Comment system for engagement",
       "Rich text editor for content creation",
       "Social sharing capabilities"
     ],
@@ -70,8 +69,8 @@ const projects = [
     outcomes: "100% uptime with Vercel hosting. Sub-100ms page load times. Growing community of 100+ active bloggers.",
     image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=400&fit=crop",
     links: {
-      github: "#",
-      live: "#"
+      github: "https://github.com/Ashmit0405/Blog_Site",
+      live: "https://blog-site-ruddy-three.vercel.app/"
     }
   }
 ]
@@ -103,7 +102,7 @@ export function Projects() {
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20"></div>
+                  <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-black/20"></div>
                 </div>
                 <div className="p-6 space-y-4">
                   <div>

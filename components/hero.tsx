@@ -47,7 +47,7 @@ export function Hero() {
             </div>
 
             <div className="flex items-center gap-4 pt-8">
-              <a href="#" className="inline-flex items-center gap-2 px-6 py-2 border border-border rounded-lg hover:bg-muted transition-colors text-sm font-medium group">
+              <a href="/Resume_1.pdf" className="inline-flex items-center gap-2 px-6 py-2 border border-border rounded-lg hover:bg-muted transition-colors text-sm font-medium group">
                 <span>Download Resume</span>
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -56,8 +56,8 @@ export function Hero() {
 
           <div className="hidden md:block">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl blur-3xl"></div>
-              <div className="relative bg-gradient-to-br from-card to-background border border-border rounded-2xl p-8 shadow-xl">
+              <div className="absolute inset-0 bg-linear-to-br from-accent/20 to-accent/5 rounded-2xl blur-3xl"></div>
+              <div className="relative bg-linear-to-br from-card to-background border border-border rounded-2xl p-8 shadow-xl">
                 <div className="space-y-6">
                   <div className="h-128 bg-muted rounded-xl flex items-center justify-center">
                     {/* <div className="text-center text-muted-foreground">
