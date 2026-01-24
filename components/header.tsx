@@ -28,19 +28,19 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <button onClick={() => scrollToSection('about')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <button onClick={() => scrollToSection('about')} className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:cursor-pointer">
             About
           </button>
-          <button onClick={() => scrollToSection('skills')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <button onClick={() => scrollToSection('skills')} className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:cursor-pointer">
             Skills
           </button>
-          <button onClick={() => scrollToSection('projects')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <button onClick={() => scrollToSection('projects')} className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:cursor-pointer">
             Projects
           </button>
-          <button onClick={() => scrollToSection('experience')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <button onClick={() => scrollToSection('experience')} className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:cursor-pointer">
             Experience
           </button>
-          <button onClick={() => scrollToSection('contact')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <button onClick={() => scrollToSection('contact')} className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:cursor-pointer">
             Contact
           </button>
         </nav>
