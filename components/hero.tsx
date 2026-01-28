@@ -59,14 +59,14 @@ export function Hero() {
               <div className="absolute inset-0 bg-linear-to-br from-accent/20 to-accent/5 rounded-2xl blur-3xl"></div>
               <div className="relative bg-linear-to-br from-card to-background border border-border rounded-2xl p-8 shadow-xl">
                 <div className="space-y-6">
-                  <div className="h-128 bg-muted rounded-xl flex items-center justify-center">
+                  <div className="h-155 bg-muted rounded-xl flex items-center justify-center">
                     {/* <div className="text-center text-muted-foreground">
                       <p className="text-sm">CS Undergraduate</p>
                       <p className="text-3xl font-bold text-foreground mt-2">9.17</p>
                       <p className="text-sm mt-1">CGPA @ IIIT Kota</p>
                     </div> */}
                     <Image
-                      src="/profile.png"
+                      src="/profile4.jpeg"
                       alt="Ashmit Singh"
                       width={512}
                       height={512}

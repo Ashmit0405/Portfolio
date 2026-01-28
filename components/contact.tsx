@@ -18,13 +18,27 @@ export function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real app, this would send to a backend
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
-    setFormData({ name: '', email: '', message: '' })
-    setTimeout(() => setSubmitted(false), 3000)
+    try {
+      const res=await fetch("/api/contact",{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+      if(!res.ok){
+        throw new Error("Failed to send message");
+      }
+      setSubmitted(true)
+      setFormData({ name: '', email: '', message: '' })
+      setTimeout(() => setSubmitted(false), 3000)
+      console.log('Form submitted:', formData)
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert("There was an error sending your message. Please try again later.")      
+    }
   }
 
   return (

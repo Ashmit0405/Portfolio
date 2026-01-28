@@ -34,7 +34,7 @@ export default function Dashboard({ title, children }: any) {
 
         <button
           onClick={logout}
-          className="m-4 rounded border px-3 py-2 text-sm hover:bg-accent hover:cursor-pointer"
+          className="m-4 rounded border px-3 py-2 text-sm hover:bg-red-500 hover:cursor-pointer"
         >
           Logout
         </button>
@@ -42,7 +42,7 @@ export default function Dashboard({ title, children }: any) {
 
       <main className="flex-1 p-6">
         <h1 className="text-2xl font-semibold mb-6">{title}</h1>
-        <div className="rounded-xl border bg-background">
+        <div className="bg-background">
           {children}
         </div>
       </main>

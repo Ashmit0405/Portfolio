@@ -1,21 +1,20 @@
 import Dashboard from "@/components/dashboard";
 import Link from "next/link";
+import { supabaseServer } from "@/lib/supabse_server";
+import MarkAsRepliedButton from "@/components/replybutton";
+import DeleteMessageButton from "@/components/deletebutton";
 
-function getMessages() {
-  return [
-    {
-      id: "1",
-      name: "Ashmit",
-      email: "ashmit@gmail.com",
-      message: "Loved your portfolio, would like to connect.",
-      createdAt: new Date().toISOString(),
-      replied: false,
-    },
-  ];
+async function getMessages() {
+  const { data } = await supabaseServer
+    .from("contact_messages")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  return data || [];
 }
 
-export default function AdminMessagesPage() {
-  const messages = getMessages();
+export default async function AdminMessagesPage() {
+  const messages = await getMessages();
 
   return (
     <Dashboard title="Contact Messages">
@@ -23,25 +22,21 @@ export default function AdminMessagesPage() {
         <table className="w-full text-sm">
           <thead className="border-b text-muted-foreground">
             <tr>
-              <th className="py-3 text-left">Name</th>
+              <th className="py-3 text-left px-3">Name</th>
               <th className="text-left">Email</th>
               <th className="text-left">Message</th>
-              <th>Date</th>
-              <th>Status</th>
+              <th className="text-left">Date</th>
+              <th className="text-left">Status</th>
+              <th className="text-left">Action</th>
             </tr>
           </thead>
 
           <tbody>
-            {messages.map((msg) => (
-              <tr
-                key={msg.id}
-                className="border-b hover:bg-accent transition"
-              >
-                <td className="py-3 font-medium">{msg.name}</td>
+            {messages.map((msg: any) => (
+              <tr key={msg.id} className="border-b transition">
+                <td className="py-3 font-medium px-3">{msg.name}</td>
 
-                <td className="text-blue-600">
-                  {msg.email}
-                </td>
+                <td className="text-blue-600">{msg.email}</td>
 
                 <td className="max-w-sm truncate">
                   <Link
@@ -53,7 +48,7 @@ export default function AdminMessagesPage() {
                 </td>
 
                 <td className="text-muted-foreground">
-                  {new Date(msg.createdAt).toLocaleDateString()}
+                  {new Date(msg.created_at).toLocaleDateString()}
                 </td>
 
                 <td>
@@ -63,6 +58,16 @@ export default function AdminMessagesPage() {
                     <span className="text-yellow-600">Pending</span>
                   )}
                 </td>
+
+                <td className="align-middle left-0">
+                  <div className="inline-flex items-center gap-4">
+                    {!msg.replied && (
+                      <MarkAsRepliedButton id={msg.id} />
+                    )}
+                    <DeleteMessageButton id={msg.id} />
+                  </div>
+                </td>
+
               </tr>
             ))}
           </tbody>
