@@ -1,24 +1,28 @@
 import Dashboard from "@/components/dashboard";
 import EmailBlock from "@/components/emailBlock";
+
 async function getMessageById(id: string) {
-  const res=await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/contact?id=${id}`,{
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-  const data=await res.json();
-  if(!res.ok){
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_APP_URL}/api/contact?id=${id}`,
+    {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
+
+  const data = await res.json();
+  if (!res.ok) {
     throw new Error(data.error || "Failed to fetch message");
   }
+
   return {
     id: data.id,
     name: data.name,
     email: data.email,
     message: data.message,
     createdAt: data.created_at,
-    replied: data.replied
-  }
+    replied: data.replied,
+  };
 }
 
 export default async function MessageDetailPage({
@@ -31,24 +35,28 @@ export default async function MessageDetailPage({
 
   return (
     <Dashboard title="Message Details">
-      <div className="p-6 space-y-6">
+      <div className="max-w-3xl mx-auto p-4 sm:p-6 space-y-6">
         <div>
           <p className="text-sm text-muted-foreground">Name</p>
-          <p className="text-lg font-medium">{message.name}</p>
+          <p className="text-base sm:text-lg font-medium wrap-break-words">
+            {message.name}
+          </p>
         </div>
 
-         <EmailBlock email={message.email} />
+        <EmailBlock email={message.email} />
 
         <div>
           <p className="text-sm text-muted-foreground">Message</p>
-          <div className="mt-2 rounded-lg border bg-muted p-4 whitespace-pre-wrap">
+          <div className="mt-2 rounded-lg border bg-muted p-3 sm:p-4 whitespace-pre-wrap text-sm sm:text-base">
             {message.message}
           </div>
         </div>
 
-        <div className="text-sm text-muted-foreground">
+        <div className="text-xs sm:text-sm text-muted-foreground">
           Received on{" "}
-          {new Date(message.createdAt).toLocaleString()}
+          <span className="wrap-break-words">
+            {new Date(message.createdAt).toLocaleString()}
+          </span>
         </div>
       </div>
     </Dashboard>

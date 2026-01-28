@@ -26,7 +26,7 @@ export default function MarkAsRepliedButton({ id }: { id: string }) {
     <button
       onClick={handleClick}
       disabled={loading}
-      className="inline-flex items-center justify-center h-7 px-3 text-xs rounded bg-yellow-500 text-white hover:bg-yellow-600 hover:cursor-pointer"
+      className="inline-flex items-center justify-center h-7 px-3 text-xs rounded bg-yellow-500 text-white hover:bg-yellow-600 hover:cursor-pointer w-full sm:w-auto"
     >
       {loading ? "Updating..." : "Mark as Replied"}
     </button>

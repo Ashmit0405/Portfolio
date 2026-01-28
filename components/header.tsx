@@ -1,12 +1,17 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { Moon, Sun, Menu, X, Download } from 'lucide-react'
 
 export function Header() {
   const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
@@ -23,29 +28,21 @@ export function Header() {
           <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-lg">AS</span>
           </div>
-          <span className="text-sm font-semibold text-foreground hidden sm:inline">Ashmit Singh</span>
+          <span className="text-sm font-semibold text-foreground hidden sm:inline">
+            Ashmit Singh
+          </span>
         </div>
-
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <button onClick={() => scrollToSection('about')} className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:cursor-pointer">
-            About
-          </button>
-          <button onClick={() => scrollToSection('skills')} className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:cursor-pointer">
-            Skills
-          </button>
-          <button onClick={() => scrollToSection('projects')} className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:cursor-pointer">
-            Projects
-          </button>
-          <button onClick={() => scrollToSection('experience')} className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:cursor-pointer">
-            Experience
-          </button>
-          <button onClick={() => scrollToSection('contact')} className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:cursor-pointer">
-            Contact
-          </button>
+          {['about', 'skills', 'projects', 'experience', 'contact'].map((id) => (
+            <button
+              key={id}
+              onClick={() => scrollToSection(id)}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+            >
+              {id.charAt(0).toUpperCase() + id.slice(1)}
+            </button>
+          ))}
         </nav>
-
-        {/* Actions */}
         <div className="flex items-center gap-4">
           <a
             href="/Resume_1.pdf"
@@ -55,17 +52,21 @@ export function Header() {
             <span>Resume</span>
           </a>
 
-          <button
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="p-2 hover:bg-muted rounded-lg transition-colors"
-            aria-label="Toggle theme"
-          >
-            {theme === 'dark' ? (
-              <Sun className="w-5 h-5 text-foreground" />
-            ) : (
-              <Moon className="w-5 h-5 text-foreground" />
-            )}
-          </button>
+          {mounted ? (
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="p-2 hover:bg-muted rounded-lg transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? (
+                <Sun className="w-5 h-5 text-foreground" />
+              ) : (
+                <Moon className="w-5 h-5 text-foreground" />
+              )}
+            </button>
+          ) : (
+            <div className="w-9 h-9" />
+          )}
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -80,26 +81,18 @@ export function Header() {
           </button>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border bg-background">
           <nav className="flex flex-col gap-4 px-4 py-4">
-            <button onClick={() => scrollToSection('about')} className="text-left text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
-              About
-            </button>
-            <button onClick={() => scrollToSection('skills')} className="text-left text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
-              Skills
-            </button>
-            <button onClick={() => scrollToSection('projects')} className="text-left text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
-              Projects
-            </button>
-            <button onClick={() => scrollToSection('experience')} className="text-left text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
-              Experience
-            </button>
-            <button onClick={() => scrollToSection('contact')} className="text-left text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
-              Contact
-            </button>
+            {['about', 'skills', 'projects', 'experience', 'contact'].map((id) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className="text-left text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+              >
+                {id.charAt(0).toUpperCase() + id.slice(1)}
+              </button>
+            ))}
             <a
               href="/Resume_1.pdf"
               className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium"
