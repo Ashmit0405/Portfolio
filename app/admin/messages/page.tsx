@@ -4,6 +4,8 @@ import { supabaseServer } from "@/lib/supabse_server";
 import MarkAsRepliedButton from "@/components/replybutton";
 import DeleteMessageButton from "@/components/deletebutton";
 
+export const dynamic = "force-dynamic";
+
 async function getMessages() {
   const { data } = await supabaseServer
     .from("contact_messages")

@@ -2,35 +2,44 @@ import { NextResponse } from "next/server";
 import { supabaseServer } from "@/lib/supabse_server";
 
 export async function POST(req: Request) {
-    try {
-        const { name, email, message } = await req.json();
-        if (!name || !email || !message) {
-            return NextResponse.json({ error: "All fields are required." }, { status: 400 });
-        }
-        const { error } = await supabaseServer.from("contact_messages").insert([{
-            name,
-            email,
-            message
-        }]);
-        if (error) {
-            return NextResponse.json({ error: "Failed to save the message" }, { status: 500 });
-        }
-        return NextResponse.json({ message: "Message sent successfully" }, { status: 200 });
-    } catch (error) {
-        return NextResponse.json(
-            { error: "Invalid request" },
-            { status: 400 }
-        );
+  try {
+    const { name, email, message } = await req.json();
+    if (!name || !email || !message) {
+      return NextResponse.json({ error: "All fields are required." }, { status: 400,headers:{"Cache-Control": "no-store"} });
     }
+    const { error } = await supabaseServer.from("contact_messages").insert([{
+      name,
+      email,
+      message
+    }]);
+    if (error) {
+      return NextResponse.json({ error: "Failed to save the message" }, { status: 500,headers:{"Cache-Control": "no-store"} });
+    }
+    return NextResponse.json(
+      { message: "Message sent successfully" },
+      {
+        status: 200,
+        headers: {
+          "Cache-Control": "no-store",
+        },
+      }
+    );
+
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Invalid request" },
+      { status: 400,headers:{"Cache-Control": "no-store"} }
+    );
+  }
 }
 export async function GET(req: Request) {
-    const { searchParams } = new URL(req.url);
+  const { searchParams } = new URL(req.url);
   const id = searchParams.get("id");
 
   if (!id) {
     return NextResponse.json(
       { error: "Message id is required" },
-      { status: 400 }
+      { status: 400,headers:{"Cache-Control": "no-store"} }
     );
   }
 
@@ -43,11 +52,11 @@ export async function GET(req: Request) {
   if (error || !data) {
     return NextResponse.json(
       { error: "Message not found" },
-      { status: 404 }
+      { status: 404,headers:{"Cache-Control": "no-store"} }
     );
   }
 
-  return NextResponse.json(data, { status: 200 });
+  return NextResponse.json(data, { status: 200,headers:{"Cache-Control": "no-store"} });
 }
 export async function PATCH(req: Request) {
   try {
@@ -56,7 +65,7 @@ export async function PATCH(req: Request) {
     if (!id) {
       return NextResponse.json(
         { error: "Message id is required" },
-        { status: 400 }
+        { status: 400,headers:{"Cache-Control": "no-store"} }
       );
     }
 
@@ -70,18 +79,18 @@ export async function PATCH(req: Request) {
     if (error || !data) {
       return NextResponse.json(
         { error: "Failed to update message" },
-        { status: 500 }
+        { status: 500,headers:{"Cache-Control": "no-store"} }
       );
     }
 
     return NextResponse.json(
       { message: "Marked as replied", data },
-      { status: 200 }
+      { status: 200,headers:{"Cache-Control": "no-store"} }
     );
   } catch (err) {
     return NextResponse.json(
       { error: "Invalid request" },
-      { status: 400 }
+      { status: 400,headers:{"Cache-Control": "no-store"} }
     );
   }
 }
@@ -92,7 +101,7 @@ export async function DELETE(req: Request) {
     if (!id) {
       return NextResponse.json(
         { error: "Message id is required" },
-        { status: 400 }
+        { status: 400,headers:{"Cache-Control": "no-store"} }
       );
     }
 
@@ -104,18 +113,18 @@ export async function DELETE(req: Request) {
     if (error) {
       return NextResponse.json(
         { error: "Failed to delete message" },
-        { status: 500 }
+        { status: 500,headers:{"Cache-Control": "no-store"} }
       );
     }
 
     return NextResponse.json(
       { message: "Message deleted successfully" },
-      { status: 200 }
+      { status: 200,headers:{"Cache-Control": "no-store"} }
     );
   } catch (err) {
     return NextResponse.json(
       { error: "Invalid request" },
-      { status: 400 }
+      { status: 400,headers:{"Cache-Control": "no-store"} }
     );
   }
 }

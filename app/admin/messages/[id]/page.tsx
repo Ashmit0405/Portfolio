@@ -1,12 +1,15 @@
 import Dashboard from "@/components/dashboard";
 import EmailBlock from "@/components/emailBlock";
 
+export const dynamic = "force-dynamic";
+
 async function getMessageById(id: string) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_APP_URL}/api/contact?id=${id}`,
     {
       method: "GET",
       headers: { "Content-Type": "application/json" },
+      cache:"no-store",
     }
   );
 
