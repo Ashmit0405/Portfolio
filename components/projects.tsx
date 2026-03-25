@@ -20,12 +20,12 @@ const projects = [
       "Submission history and performance analytics",
       "Admin dashboard for problem and user management"
     ],
-    techStack: ["Node.js", "Express", "MongoDB", "Docker", "PM2", "NGINX", "GCP", "JWT"],
-    outcomes: "Successfully deployed with 500+ users. Achieved sub-2s code execution time. Handled 1000+ daily submissions with 99.9% uptime.",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop",
+    techStack: ["Node.js", "Express", "MongoDB", "Docker", "PM2", "NGINX", "AWS", "JWT"],
+    outcomes: "Successfully deployed on the EC2 instance.",
+    image: "image.png",
     links: {
       github: "https://github.com/Ashmit0405/Coding_Platform",
-      live: "#"
+      live: "https://coding-platform-livid.vercel.app/"
     }
   },
   {
@@ -44,11 +44,11 @@ const projects = [
       "User authentication and document management"
     ],
     techStack: ["FastAPI", "Qdrant", "React", "Sentence-BERT", "BART", "Python", "Vector Search", "RAG"],
-    outcomes: "Achieved 85% ROUGE score on benchmark datasets. Successfully processed PDFs up to 100 pages. Currently used by 200+ users.",
+    outcomes: "Successfully implemented RAG based architecture.",
     image: "https://images.unsplash.com/photo-1526374965328-7f5ae4e8a83f?w=800&h=400&fit=crop",
     links: {
       github: "https://github.com/Ashmit0405/Rag-PDF-Summarizer",
-      live: "#"
+      live: "No Live Link"
     }
   },
   {
@@ -66,8 +66,8 @@ const projects = [
       "Social sharing capabilities"
     ],
     techStack: ["React", "Appwrite", "Tailwind CSS", "Vercel", "JavaScript", "REST API"],
-    outcomes: "100% uptime with Vercel hosting. Sub-100ms page load times. Growing community of 100+ active bloggers.",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=400&fit=crop",
+    outcomes: "Successfully implemented and deployed the site on vercel",
+    image: "blog.png",
     links: {
       github: "https://github.com/Ashmit0405/Blog_Site",
       live: "https://blog-site-ruddy-three.vercel.app/"
